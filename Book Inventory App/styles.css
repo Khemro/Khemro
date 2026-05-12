@@ -1,0 +1,89 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* Row Background Colors */
+tr[class="read"] {
+    background-image: linear-gradient(green, lightgreen);
+}
+
+tr[class="to-read"] {
+    background-image: linear-gradient(blue, lightblue);
+}
+
+tr[class="in-progress"] {
+    background-image: linear-gradient(orange, yellow);
+}
+
+/* Span Display */
+span {
+    display: inline-block;
+}
+
+/* Status Badge Styles */
+tr[class="to-read"] span[class="status"] {
+    border: 2px solid blue;
+    background-image: linear-gradient(blue, lightblue);
+    color: white;
+}
+
+tr[class="read"] span[class="status"] {
+    border: 2px solid green;
+    background-image: linear-gradient(green, lightgreen);
+    color: white;
+}
+
+tr[class="in-progress"] span[class="status"] {
+    border: 2px solid orange;
+    background-image: linear-gradient(orange, yellow);
+    color: black;
+}
+
+/* Status and Rate Dimensions */
+span[class="status"],
+span[class^="rate"] {
+    height: 20px;
+    width: 80px;
+    padding: 5px;
+}
+
+/* Rating Stars Basic Style */
+span[class^="rate"] > span {
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 2px;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+}
+
+/* One Star - First Descendant of rate one */
+span[class~="one"] > span:first-child {
+    background-image: linear-gradient(gold, yellow);
+}
+
+/* Two Stars - First Two Descendants of rate two */
+span[class~="two"] > span:nth-child(-n+2) {
+    background-image: linear-gradient(gold, yellow);
+}
+
+/* Three Stars - All Descendants of rate three */
+span[class~="three"] > span {
+    background-image: linear-gradient(gold, yellow);
+}
